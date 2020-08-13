@@ -1,0 +1,7 @@
+mean(stepsbydate$tsteps)
+
+## [1] 10766.19
+
+median(stepsbydate$tsteps)
+
+## [1] 10765
