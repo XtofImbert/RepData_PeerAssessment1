@@ -1,0 +1,9 @@
+## load packages
+library(magrittr)
+library(dplyr)
+
+## calculate number of steps by date stepsbydate variable
+stepsbydate <- stepdata %>% select(date, steps) %>% group_by(date) %>% summarize(tsteps= sum(steps)) %>%na.omit()
+
+## DISPLAY histogram 
+hist(stepsbydate$tsteps, xlab = "Total daily Steps",main="Histogram of Total Steps by day", breaks = 20)
