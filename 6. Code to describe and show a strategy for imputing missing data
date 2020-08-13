@@ -1,0 +1,18 @@
+## replacing missing values with mean for 5 mins interval and check all NAs have been replaced 
+library(magrittr)
+library(dplyr)
+
+replacewithmean <- function(x) replace(x, is.na(x), mean(x, na.rm = TRUE))
+meandata <- stepdata%>% group_by(interval) %>% mutate(steps= replacewithmean(steps))
+head(meandata)
+
+## A tibble: 6 x 3
+## Groups:   interval [6]
+##   steps date       interval
+##   <dbl> <chr>         <int>
+##1 1.72   2012-10-01        0
+##2 0.340  2012-10-01        5
+##3 0.132  2012-10-01       10
+##4 0.151  2012-10-01       15
+##5 0.0755 2012-10-01       20
+##6 2.09   2012-10-01       25
