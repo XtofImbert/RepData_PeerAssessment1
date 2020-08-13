@@ -1,0 +1,20 @@
+stepsbyinterval[which(stepsbyinterval$tsteps== max(stepsbyinterval$tsteps)),]
+
+## # A tibble: 1 x 2
+##  interval tsteps
+##     <int>  <dbl>
+## 1      835   206.1698
+
+## imputing missing values NAs
+missingVals <- sum(is.na(data))
+
+## Warning message:
+## In is.na(data) : is.na() applied to non-(list or vector) of type 'closure'
+
+## display missing values
+missingVals
+
+## [1] 0
+
+
+
