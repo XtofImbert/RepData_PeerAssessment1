@@ -1,0 +1,6 @@
+# download data from the Internet
+download.file("https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip", destfile = "activity.zip", mode="wb")
+# unzip and read dataset
+unzip("activity.zip")
+stepdata <- read.csv("activity.csv", header = TRUE)
+head(stepdata)
